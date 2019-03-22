@@ -11,8 +11,6 @@ namespace BinarySearchTree
         // member methods
         Node root;
         Node current;
-        public Node left;
-        public Node right;
 
         // constructor
         public BinarySearchTree()
@@ -23,9 +21,10 @@ namespace BinarySearchTree
         // member variables
         public void Add(int info)
         {
+            current = root;
+            Node newNode = new Node(info);
             if (root == null)
             {
-                Node newNode = new Node(info);
                 root = newNode;
                 current = root;
                 return;
@@ -39,7 +38,6 @@ namespace BinarySearchTree
                     {
                         if (current.left == null)
                         {
-                            Node newNode = new Node(info);
                             current.left = newNode;
                             break;
                         }
@@ -52,7 +50,6 @@ namespace BinarySearchTree
                     {
                         if (current.right == null)
                         {
-                            Node newNode = new Node(info);
                             current.right = newNode;
                             break;
                         }
